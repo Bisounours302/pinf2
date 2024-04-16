@@ -1,0 +1,51 @@
+.sidebar {
+    position: fixed;
+    top: 150px;
+    bottom: 0;
+    width: 200px;
+    overflow: auto;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-link.active {
+    color: #007bff;
+}
+
+.tab-content {
+    margin-left: 220px; /* Largeur de la barre de navigation plus un peu d'espace */
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.show.active {
+    display: block;
+}
+
+.tab-pane h2 {
+    margin-top: 0;
+}
+
+.tab-pane img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}

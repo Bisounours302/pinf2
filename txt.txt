@@ -1,0 +1,5 @@
+<ul>
+        <?php foreach($matchs as $match): ?>
+        <li>LILLERS vs <?php echo $match->opposant; ?> le <?php echo $match->dateMatch?></li>
+        <?php endforeach; ?>
+    </ul>

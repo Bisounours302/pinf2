@@ -1,0 +1,23 @@
+/* Contacts */
+
+.conteneurContacts {
+    position: relative;
+    display: flex;
+    padding: 150px;
+    list-style-type: none; 
+    color:white;
+}
+
+.contact { /*div block*/
+    display: block;
+    width: 150px;
+    height: 400px;
+    background-color: lightgray; 
+    margin:50px;
+}
+
+.photoContact {
+width: 150px;
+height: 150px;
+background-size: cover;
+}

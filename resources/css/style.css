@@ -1,0 +1,60 @@
+/* Header */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+  
+header {
+    position: fixed; /* Ajoutez cette ligne */
+    top: 0; /* Ajoutez cette ligne */
+    width: 100%; /* Ajoutez cette ligne */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    background-color: #2F2F2F;
+    z-index: 1000; /* Ajoutez cette ligne pour s'assurer que l'en-tête est toujours au-dessus des autres éléments */
+}
+
+/* Ajoutez une marge en haut du contenu suivant l'en-tête */
+.main-content {
+    margin-top: 150px; /* La marge doit être égale à la hauteur de l'en-tête */
+}
+
+
+/* Logo */
+.logoClub {
+position: relative;
+width: 150px;
+height: 150px;
+background-size: cover;
+left: 50px;
+}
+
+
+/* Onglets */
+.conteneurOnglets {
+position: relative;
+display: flex;
+right: 50px;
+list-style-type: none;
+}
+
+
+.conteneurOnglets li a {
+display: table-cell;
+text-decoration: none;
+color: #ffffff;
+text-align: center;
+vertical-align: middle;
+width: 260px;
+height: 150px;
+font-size: 32px;
+}
+
+.conteneurOnglets li a:hover {
+background-color: #4F4F4F;
+}
+
+/* Main */
