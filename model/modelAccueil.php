@@ -37,7 +37,7 @@ class modelAccueil{
   
   public static function getMatchs(){
     // On récupère tous les match après la date actuelle dans l'order chronologique
-    $sql = "SELECT * FROM matchs WHERE dateMatch >= CURDATE() ORDER BY dateMatch";
+    $sql = "SELECT nom, dateMatch, opposant, adresse FROM matchs JOIN equipes ON equipes.id = matchs.equipe WHERE dateMatch >= CURDATE() ORDER BY dateMatch";
     $rep = model::$pdo->query($sql);
     $rep->setFetchMode(PDO::FETCH_CLASS, 'modelAccueil');
     return $rep->fetchAll();

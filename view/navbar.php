@@ -12,8 +12,10 @@
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0" nonce="BmQoRgeh"></script>
     </head>
     <body>
-    <header>
-        <img src="/pinf2/resources/img/logo/logoClub.png" alt="Logo du club de basket" class="logoClub">
+    <header <?php if(isset($_SESSION['username'])) { echo 'style="background-color: red;"'; } ?>>
+        <a href="index.php?controller=Accueil">
+            <img src="/pinf2/resources/img/logo/logoClub.png" alt="Logo du club de basket" class="logoClub">    
+        </a>
         <ul class="conteneurOnglets">
             <li class="onglet" style=""><a href="index.php?controller=Accueil">Accueil</a></li>
             <li class="onglet"><a href="index.php?controller=Club">Club</a></li>

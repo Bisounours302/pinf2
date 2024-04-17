@@ -1,0 +1,52 @@
+.sidebar {
+    position: fixed; /* Fixe la barre latérale à une position spécifique */
+    top: 150px; /* Positionne la barre latérale en haut de la page */
+    left: 0; /* Positionne la barre latérale à gauche de la page */
+    height: 100%; /* Définit la hauteur de la barre latérale */
+    width: 100px; /* Définit la largeur de la barre latérale */
+    overflow: auto; /* Ajoute une barre de défilement si le contenu dépasse la hauteur de la barre latérale */
+    background-color: #333; /* Définit la couleur de fond de la barre latérale */
+    padding: 10px; /* Ajoute de l'espace autour du contenu de la barre latérale */
+}
+
+.sidebar a {
+    display: block; /* Affiche les liens en bloc */
+    color: #fff; /* Définit la couleur des liens */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    margin-bottom: 10px; /* Ajoute de l'espace en dessous de chaque lien */
+}
+
+.sidebar a:hover {
+    color: #ddd; /* Change la couleur des liens au survol */
+}
+
+.content {
+    position: relative;
+    left: 150px; /* Décale le contenu vers la droite pour laisser de la place à la barre latérale */
+    height: 100%; /* Définit la hauteur du contenu */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Crée deux colonnes de taille égale */
+    grid-template-rows: 1fr 1fr; /* Crée deux lignes de taille égale */
+}
+
+.joueurs {
+    grid-column: 1; /* Place les joueurs dans la première colonne */
+    grid-row: 1; /* Place les joueurs dans la première ligne */
+}
+
+.entrainements {
+    grid-column: 1; /* Place les entrainements dans la deuxième colonne */
+    grid-row: 2; /* Place les entrainements dans la première ligne */
+}
+
+.matches {
+    grid-column: 2; /* Place les matches sur les deux colonnes */
+    grid-row: 1/span 2; /* Place les matches dans la deuxième ligne */
+}
+
+.matches {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}

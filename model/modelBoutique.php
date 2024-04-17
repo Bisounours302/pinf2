@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once(File::build_path(array("model", "model.php")));
 
 class modelBoutique{
@@ -39,7 +42,40 @@ class modelBoutique{
     $rep->setFetchMode(PDO::FETCH_CLASS, 'modelBoutique');
     return $rep->fetchAll();
   }
+  
 
+  public static function ajouterArticle($nom, $description, $prix, $photo_url) {
+      $sql = "INSERT INTO boutique_objets (nom, description, prix, photo_url) VALUES (:nom, :description, :prix, :photo_url)";
+      $req_prep = model::$pdo->prepare($sql);
+      $values = array(
+          'nom' => $nom,
+          'description' => $description,
+          'prix' => $prix,
+          'photo_url' => $photo_url,
+      );
+      try {
+        $req_prep->execute($values);
+    } catch (PDOException $e) {
+        // Gérer l'erreur ici, par exemple en affichant un message d'erreur à l'utilisateur
+        echo 'Erreur : ' . $e->getMessage();
+    }
+  }
+
+  public static function supprimerArticle($id) {
+      $sql = "DELETE FROM boutique_objets WHERE id = :id";
+      $req_prep = model::$pdo->prepare($sql);
+      $values = array(
+          'id' => $id,
+      );
+      try {
+        $req_prep->execute($values);
+    } catch (PDOException $e) {
+        // Gérer l'erreur ici, par exemple en affichant un message d'erreur à l'utilisateur
+        echo 'Erreur : ' . $e->getMessage();
+    }
+  }
+
+  
   public function create(){
     $sql = "INSERT INTO types(idType, nomType) VALUES (:idT, :nomT)";
     $req_prep = model::$pdo->prepare($sql);

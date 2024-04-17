@@ -32,3 +32,10 @@
         </p>
     </div>
 </div>
+<?php
+if (isset($_SESSION['username'])) {
+    echo '<a href="index.php?controller=Logout">Déconnexion</a>';
+} else {
+    echo '<a href="index.php?controller=Login">Connexion</a>';
+}
+?>

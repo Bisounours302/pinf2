@@ -28,7 +28,15 @@ else{
 				}
 				$cl = get_class_methods($controller);
 
-				if(in_array($action, $cl)){
+				if($controller=="controllerEquipes" && $action=="readAll" && isset($_GET['equipe'])){
+					controllerEquipes::readAll($_GET['equipe']);
+				}
+
+				elseif($controller=="controllerEquipes" && $action=="readAll" && !isset($_GET['equipe'])){
+					controllerEquipes::readAll(1);
+				}
+
+				elseif(in_array($action, $cl)){
 					$controller::$action();
 				}
 				else{

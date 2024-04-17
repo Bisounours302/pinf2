@@ -1,9 +1,12 @@
 .sidebar {
-    position: fixed;
-    top: 150px;
-    bottom: 0;
-    width: 200px;
-    overflow: auto;
+    position: fixed; /* Fixe la barre latérale à une position spécifique */
+    top: 150px; /* Positionne la barre latérale en haut de la page */
+    left: 0; /* Positionne la barre latérale à gauche de la page */
+    height: 100%; /* Définit la hauteur de la barre latérale */
+    width: 100px; /* Définit la largeur de la barre latérale */
+    overflow: auto; /* Ajoute une barre de défilement si le contenu dépasse la hauteur de la barre latérale */
+    background-color: #333; /* Définit la couleur de fond de la barre latérale */
+    padding: 10px; /* Ajoute de l'espace autour du contenu de la barre latérale */
 }
 
 .nav {
@@ -19,7 +22,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color : white;
 }
 
 .nav-link.active {

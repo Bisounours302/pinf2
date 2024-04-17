@@ -1,3 +1,42 @@
+.container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+
+}
+
+.matchs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column:  2;
+    grid-row:  1;
+    justify-content: center;
+}
+
+.matchs> h2 {
+    background-color: blueviolet;
+    text-align:center;
+    outline: 1px solid black;
+    width:90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    color:white;
+}
+
+.facebook {
+    grid-column:  1;
+    grid-row:  1/span 2;
+}
+
+.sponsor {
+    grid-column:  2;
+    grid-row:  2;
+}
+
 .match-slide {
     display: none !important;
 }
@@ -7,11 +46,16 @@
 }
 
 .match-container {
-    width: 300px;
+    width: 90%;
     height: 200px;
     border: 1px solid black;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    align-items: center;
+    margin-top: 0;
+    color:white;
+    background-color: gray;
 }
 
 .match-slide {
@@ -38,16 +82,19 @@
 }
 
 .arrow {
+    display: flex;
     position: absolute;
-    top: 50%;
+    top: 80%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: gray;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    background-color: black;
     color: white;
-    text-align: center;
     line-height: 30px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
 .arrow.prev {
