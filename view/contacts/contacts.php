@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="/pinf2/resources/css/contacts.css">
-//CONTACT 1
 <div class="conteneurContacts">
     <div class="contact">
         <!-- Photo -->

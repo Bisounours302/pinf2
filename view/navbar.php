@@ -25,5 +25,7 @@
             <li class="onglet"><a href="index.php?controller=Contacts">Contacts</a></li>
         </ul>
     </header>
+    <div class="ligneJaune"></div>
     <div class="main-content">
+        <img src="/pinf2/resources/img/background/background.png" class="backgroundImage">
 

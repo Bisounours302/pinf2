@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-PAGE BOUTIQUE
-
 <head>
     <link rel="stylesheet" type="text/css" href="/pinf2/resources/css/boutique.css">
 </head>
