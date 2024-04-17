@@ -15,11 +15,11 @@
     <div class="entrainements">
     <h1><?php echo $tab_equipes[$idEquipe - 1]->nom; ?></h1>
     <?php $days = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"); ?>
-    <table style="margin:0;">
+    <table style="margin:0;background-color:gray;width:800px;border: 1px solid black;" cellspacing="0">
         <tr style="margin:0;"> 
-        <h2 style="background-color:pink;">Entrainements</h2>
+        <h2 style="background-color:darkorange;margin:0;width:800px;text-align:center;border: 1px solid black;">Entrainements</h2>
         </tr>
-        <tr style="background-color:plum;">
+        <tr style="background-color:purple;margin:0;width:100%;height:100%;">
             <th>Lundi</th>
             <th>Mardi</th>
             <th>Mercredi</th>
@@ -42,7 +42,7 @@
         <?php if (isset($_SESSION['username'])): ?>
             <tr>
                 <?php foreach ($days as $day): ?>
-                    <td>
+                    <td style="text-align: center">
                         <form action="?controller=Equipes&action=supprimerEntrainement" method="POST">
                             <input type="hidden" name="idEquipe" value="<?php echo $idEquipe; ?>">
                             <input type="hidden" name="jour" value="<?php echo $day; ?>">
@@ -64,8 +64,10 @@
                 <th>Action</th>
             <?php endif; ?>
         </tr>
+        <tr>
+        <?php $flag=0; ?>
         <?php foreach ($tab_joueurs as $joueur): ?>
-            <tr>
+            
                 <td><img src="/pinf2/resources/img/joueurs/<?php echo $joueur->photo_url; ?>"
                         alt="Photo de <?php echo $joueur->prenom; ?>" style="width:100px;height:100px;"></td>
                 <?php if (isset($_SESSION['username'])): ?>
@@ -79,16 +81,21 @@
                     </form>
                     </td>
                 <?php endif; ?>
-            </tr>
+                <?php $flag++; ?>
+                <?php if($flag%4==0): ?>
+                    </tr>
+                    <tr>
+                <?php endif; ?>
         <?php endforeach; ?>
+        </tr>
     </table>
     </div>
 
 
     <div class="matches">
-    <h2>Matchs</h2>
-    <table>
-        <tr>
+    <h2 style="background-color:darkorange;margin:0;width:400px;text-align:center;border: 1px solid black;">Matchs</h2>
+    <table style="width:400px;background-color:gray;border:1px solid black;" cellspacing="0">
+        <tr style="background-color:purple;">
             <th style="text-align: center;">Adversaire</th>
             <th style="text-align: center;">Date</th>
             <th style="text-align: center;">Lieu</th>
@@ -114,8 +121,9 @@
         <?php endforeach; ?>
     </table>
     </div>
-
+    </div>
     <?php if (isset($_SESSION['username'])): ?>
+        <div style="padding-left: 150px;">
         <h2>Ajouter un entraînement</h2>
         <form action="?controller=Equipes&action=ajouterEntrainement" method="POST">
             <!-- Ajouter les champs du formulaire ici -->
@@ -180,6 +188,7 @@
             <input type="text" name="adresse" id="adresse">
             <input type="submit" value="Ajouter">
         </form>
+        </div>
     <?php endif; ?>
 
     

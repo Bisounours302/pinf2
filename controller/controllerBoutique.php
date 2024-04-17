@@ -35,30 +35,12 @@ class controllerBoutique
         die('Erreur : le téléchargement du fichier a échoué avec le code d\'erreur ' . $_FILES["photo"]["error"]);
       }
 
-      // Déplacez le fichier téléchargé vers le répertoire de destination
-      if (!move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
-        die('Erreur : le déplacement du fichier téléchargé a échoué.');
-      }
-
       $photo_url = $_FILES['photo']['name'];
 
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-      // Vérifier si le fichier image est une image réelle ou une fausse image
-      if (isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["photo"]["tmp_name"]);
-        if ($check !== false) {
-          echo "Le fichier est une image - " . $check["mime"] . ".";
-          $uploadOk = 1;
-        } else {
-          echo "Le fichier n'est pas une image.";
-          $uploadOk = 0;
-        }
-      }
-
-      
-
+    
       // Vérifier si le fichier existe déjà
       if (file_exists($target_file)) {
         echo "Désolé, le fichier existe déjà.";

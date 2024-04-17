@@ -2,7 +2,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Inter;
 }
   
 header {
@@ -14,6 +14,7 @@ header {
     justify-content: space-between;
     height: 150px;
     background-color: #2F2F2F;
+    opacity: 0.9;
     z-index: 1000; /* Ajoutez cette ligne pour s'assurer que l'en-tête est toujours au-dessus des autres éléments */
 }
 
@@ -54,12 +55,12 @@ font-size: 32px;
 }
 
 .conteneurOnglets li a:hover {
-background-color: #4F4F4F;
+    background-color: #4F4F4F;
+
 }
 
 /* Main */
 .backgroundImage {
-    opacity: 0.6;
     position: fixed;
     left: 0;
     top: 0;
@@ -67,6 +68,10 @@ background-color: #4F4F4F;
     height: 100%;
     z-index: -1;
     background-size: cover;
+}
+
+.main-content{
+    color: white;
 }
 
 .ligneJaune {

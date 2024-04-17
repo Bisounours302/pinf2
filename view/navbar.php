@@ -10,6 +10,9 @@
         <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0" nonce="BmQoRgeh"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
     <header <?php if(isset($_SESSION['username'])) { echo 'style="background-color: red;"'; } ?>>

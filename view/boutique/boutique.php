@@ -10,12 +10,13 @@ error_reporting(E_ALL);
 <div class="container">
 <?php foreach ($articles as $article): ?>
     <div class="article">
+        <div class="infos">
         <h2><?php echo $article->nom; ?></h2>
         <p><?php echo $article->description; ?></p>
-        <!-- afficher l'image de l'article -->
-        <img class="imgArticle" src="/pinf2/resources/img/boutique/<?php echo $article->photo_url; ?>" alt="image de l'article">
-        <!-- Affichez les autres propriétés comme vous le souhaitez -->
-
+        <p><?php echo $article->prix; ?>€</p>
+        
+       
+        
         <?php if (isset($_SESSION['username'])): ?>
             <form action="index.php?controller=Boutique&action=supprimerArticle" method="post">
                 <input type="hidden" name="article_id" value="<?php echo $article->id; ?>">
@@ -23,6 +24,11 @@ error_reporting(E_ALL);
                 <input type="submit" value="Supprimer">
             </form>
         <?php endif; ?>
+        </div>
+        <!-- afficher l'image de l'article -->
+        <img class="imgArticle" src="/pinf2/resources/img/boutique/<?php echo $article->photo_url; ?>" alt="image de l'article">
+        <!-- Affichez les autres propriétés comme vous le souhaitez -->
+
     </div>
 <?php endforeach; ?>
 </div>

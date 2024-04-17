@@ -123,7 +123,7 @@ class controllerEquipes
     $modelEquipes->ajouterJoueur($idEquipe, $nomJoueur, $prenomJoueur, $entraineur, $photo['name']);
 
     // Redirigez l'utilisateur vers la page de l'équipe
-    header('Location: index.php?controller=equipes&id='.$idEquipe);
+    header('Location: index.php?controller=equipes&equipe='.$idEquipe);
 }
 
   public static function supprimerEntrainement()
