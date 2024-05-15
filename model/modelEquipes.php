@@ -134,30 +134,4 @@ class modelEquipes
         $req_prep->execute($values);
     }
 
-
-
-
-    public function create()
-    {
-        $sql = "INSERT INTO types(idType, nomType) VALUES (:idT, :nomT)";
-        $req_prep = model::$pdo->prepare($sql);
-        $values = array("idT" => NULL, "nomT" => $this->nomType);
-        $req_prep->execute($values);
-    }
-
-    public function update()
-    {
-        $sql = 'UPDATE types SET nomType = :nomT';
-        $req_prep = model::$pdo->prepare($sql);
-        $values = array("nomT" => $this->nomType);
-        $req_prep->execute($values);
-    }
-
-    public function delete()
-    {
-        $sql = "DELETE FROM types WHERE nomType = :nomT";
-        $req_prep = model::$pdo->prepare($sql);
-        $values = array("nomT" => $this->nomType);
-        $req_prep->execute($values);
-    }
 }
